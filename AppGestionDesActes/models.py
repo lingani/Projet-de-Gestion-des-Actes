@@ -1,13 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Domaine(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255, blank=True)
-    added_on = models.DateTimeField(auto_now_add=True)
-    objects = models.Manager()
-
 
 class Base_legale(models.Model):
     id = models.AutoField(primary_key=True)
@@ -42,7 +35,6 @@ class Source_des_donnees(models.Model):
 
 class Acte(models.Model):
     id = models.AutoField(primary_key=True)
-    domaine_id = models.ForeignKey(Domaine, on_delete=models.CASCADE, null=True)    
     categorie_acte_id = models.ForeignKey(Categorie_acte, on_delete=models.CASCADE)
     source_des_donnees_id = models.ForeignKey(Source_des_donnees, on_delete=models.CASCADE)
     page_number = models.IntegerField(null=True, blank=True)

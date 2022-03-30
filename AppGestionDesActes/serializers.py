@@ -1,12 +1,6 @@
 from rest_framework import fields, serializers
 
-from AppGestionDesActes.models import Domaine, Base_legale, Categorie_acte, Source_des_donnees, Type_de_centre, Acte, Type_preoccupation, Preoccupation
-
-class DomaineSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Domaine
-        fields = "__all__"
-
+from AppGestionDesActes.models import Base_legale, Categorie_acte, Source_des_donnees, Type_de_centre, Acte, Type_preoccupation, Preoccupation
 
 class BaseLegaleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -45,7 +39,6 @@ class ActeSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
-        response['domaine'] = DomaineSerializer(instance.domaine_id).data
         response['base_legale'] = BaseLegaleSerializer(instance.base_legale_id).data
         response['categorie_acte'] = CategorieActeSerializer(instance.categorie_acte_id).data
         response['source_des_donnees'] = SourceDesDonneesSerializer(instance.source_des_donnees_id).data
@@ -56,11 +49,10 @@ class ActeSerializer(serializers.ModelSerializer):
 class ActeListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Acte
-        fields = ['id', 'name', 'cout', 'domaine', 'types_de_centre']
+        fields = ['id', 'name', 'cout', 'types_de_centre']
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
-        response['domaine'] = DomaineSerializer(instance.domaine_id).data["name"]
         response['types_de_centre'] = [TypeDecentreSerializer(t).data["name"] for t in instance.types_de_centre.all()]
 
         return response

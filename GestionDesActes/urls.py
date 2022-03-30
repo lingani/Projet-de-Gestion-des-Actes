@@ -26,7 +26,6 @@ from AppGestionDesActes.views import ActeViewSet, ActeByIDViewSet, Preoccupation
 from GestionDesActes import settings
 
 router=routers.DefaultRouter()
-router.register("domaine",views.DomaineViewset,basename="domaine")
 router.register("acte",views.ActeViewSet,basename="acte")
 router.register("preoccupation",views.PreoccupationViewSet,basename="preoccupation")
 
