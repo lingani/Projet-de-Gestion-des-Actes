@@ -22,10 +22,11 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 
 from AppGestionDesActes import views
-from AppGestionDesActes.views import ActeViewSet, ActeByIDViewSet, PreoccupationViewSet, PreoccupationByIDViewSet
+from AppGestionDesActes.views import ActeViewSet, ActeByIDViewSet, PreoccupationViewSet, PreoccupationByIDViewSet, DomaineViewset
 from GestionDesActes import settings
 
 router=routers.DefaultRouter()
+router.register("domaine",views.DomaineViewset,basename="domaine")
 router.register("acte",views.ActeViewSet,basename="acte")
 router.register("preoccupation",views.PreoccupationViewSet,basename="preoccupation")
 

@@ -56,7 +56,7 @@ class ActeSerializer(serializers.ModelSerializer):
 class ActeListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Acte
-        fields = ['id', 'name', 'cout', 'domaine', 'types_de_centre']
+        fields = ['id', 'name', 'cout', 'types_de_centre']
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
