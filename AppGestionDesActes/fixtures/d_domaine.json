@@ -1,0 +1,1 @@
+[{"model": "AppGestionDesActes.Domaine", "pk": 0, "fields": {"name": "Sant\u00e9", "description": "Sant\u00e9", "added_on": "2022-03-03T17:19:20.654182Z"}}, {"model": "AppGestionDesActes.Domaine", "pk": 1, "fields": {"name": "\u00c9tat Civil", "description": "\u00c9tat Civil", "added_on": "2022-03-03T17:19:20.654182Z"}}]

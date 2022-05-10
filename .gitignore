@@ -1,9 +1,2 @@
-venv/*
-db.sqlite3
-AppGestionDesActes/fixtures/*
-AppGestionDesActes/migrations
-.DS_Store
-AppGestionDesActes/.DS_Store
-ReactGestionDesActes/
-ReactGestionDesActes/
-DReactGestionDesActes/
+.env
+venv/
