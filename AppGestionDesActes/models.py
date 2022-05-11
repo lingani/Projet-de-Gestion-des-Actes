@@ -11,8 +11,8 @@ class Domaine(models.Model):
 
 class Base_legale(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    contenu = models.CharField(max_length=255, blank=True)
+    name = models.CharField(max_length=500)
+    contenu = models.CharField(max_length=500, blank=True)
     link = models.CharField(max_length=255, blank=True)
     page_number = models.IntegerField(null=True, blank=True)
     added_on = models.DateTimeField(auto_now_add=True)
