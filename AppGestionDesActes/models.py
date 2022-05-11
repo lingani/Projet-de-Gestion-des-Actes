@@ -55,7 +55,7 @@ class Acte(models.Model):
     cout = models.CharField(max_length=255)
     cout_minimum = models.CharField(max_length=255, null=True, blank=True)
     cout_maximum = models.CharField(max_length=255, null=True, blank=True)
-    precision_cout = models.CharField(max_length=255, null=True, blank=True)
+    precision_cout = models.TextField(null=True, blank=True)
     validite = models.CharField(max_length=255, null=True, blank=True)
     delai_de_delivrance = models.CharField(max_length=255, null=True, blank=True)
     lieu_de_retrait = models.CharField(max_length=255, null=True, blank=True)
