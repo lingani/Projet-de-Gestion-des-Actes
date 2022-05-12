@@ -91,7 +91,7 @@ class ActeViewSet(viewsets.ViewSet):
 
     def list(self, request):
         acte = Acte.objects.all()
-        serializer = ActeListSerializer(acte, many=True, context={"request": request})
+        serializer = ActeSerializer(acte, many=True, context={"request": request})
         response_dict = {"error": False, "message": "Toute la liste des actes", "data": serializer.data}
         return Response(response_dict)
 
